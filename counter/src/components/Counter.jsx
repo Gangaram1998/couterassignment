@@ -23,6 +23,7 @@ export const Counter = ({handleDelete,i}) => {
     <div style={{border:"1px solid black", borderRadius:"10px",width:"300px",height:"400px",backgroundColor:"#666666",padding:"20px",boxSizing:"border-box",textAlign:"center",display:"flex",flexDirection:"column"}}>
         <h3 style={{color:"white"}}>{name}      <span ><RxCross2 style={{marginLeft:"30px",position:"relative"}} onClick={()=>{
             setName("Tally Counter")
+            setvalue(0)
             handleDelete(i)
         }}/></span></h3>
         <input type="number" placeholder='' style={{padding:"10px 20px"}} value={value}/><br/>
