@@ -1,6 +1,6 @@
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from "./actionTypes"
 const initialState={
-    isAuth:false,
+    isAuth:sessionStorage.getItem("isAuth") || false,
     isError:false,
     isLoading:false,
 }
@@ -16,7 +16,8 @@ export const reducer=(state=initialState,{type})=>{
         case LOGIN_REQUEST:
             return {...state,isLoading:true}
         case LOGIN_SUCCESS:
-            return {...state,isLoading:false}
+            sessionStorage.setItem("isAuth",false)
+            return {...state,isLoading:false,isAuth:true}
         case LOGIN_FAILURE:
             return {...state,isLoading:false,isError:false}
         default:
