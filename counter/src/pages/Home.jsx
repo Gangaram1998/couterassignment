@@ -37,6 +37,7 @@ export const Home = () => {
                 totalC.length>0 && totalC.map((_,i)=><Counter key={i} handleDelete={handleDelete} i={i}/>)
             }
         </div>
+        {/* <div></div> */}
     </div>
   )
 }
